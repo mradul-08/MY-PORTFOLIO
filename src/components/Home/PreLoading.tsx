@@ -56,7 +56,7 @@ function PreLoading({ count }: { readonly count: number }) {
         >
           <div className="flex w-full items-center justify-center whitespace-nowrap">
           {name.split("").map((nom, i) => {
-            const letterClass = `${spectralBridgeRegular.className} uppercase text-[14vw] leading-none tracking-tight sm:text-[13vw] md:text-[11vw] lg:text-[8.5vw] 2xl:text-[7vw]`;
+            const letterClass = `${spectralBridgeRegular.className} uppercase text-[15vw] leading-[.92] tracking-tight sm:text-[14vw] md:text-[13vw] lg:text-[12vw] xl:text-[11vw] 2xl:text-[10vw]`;
             return name[i] === "i" ? (
               <div
                 key={`${nom}_${i}`}
