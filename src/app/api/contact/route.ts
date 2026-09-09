@@ -15,7 +15,15 @@ function escapeHtml(value: string) {
 }
 
 export async function POST(request: Request) {
-  const my_email = process.env.CONTACT_EMAIL ?? "mradulgarg2005@gmail.com";
+  const my_email = process.env.CONTACT_EMAIL?.trim();
+  const emailPassword = process.env.CONTACT_EMAIL_PASSWORD?.trim();
+
+  if (!my_email || !emailPassword) {
+    return NextResponse.json(
+      { message: "The contact form is not configured on the server yet." },
+      { status: 503 }
+    );
+  }
 
   const formData = await request.formData();
   const name = String(formData.get("user_name") ?? "").trim();

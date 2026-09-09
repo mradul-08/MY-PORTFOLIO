@@ -52,13 +52,15 @@ function PreLoading({ count }: { readonly count: number }) {
     <AnimatePresence>
       {count > 0 && (
         <motion.section
-          className="z-[100] relative bg-lightBg dark:bg-darkBg w-full h-screen flex items-end justify-center overflow-hidden"
+          className="z-[100] relative flex h-[100svh] min-h-screen w-full items-center justify-center overflow-hidden bg-lightBg px-4 dark:bg-darkBg"
         >
+          <div className="flex w-full items-center justify-center whitespace-nowrap">
           {name.split("").map((nom, i) => {
+            const letterClass = `${spectralBridgeRegular.className} uppercase text-[14vw] leading-none tracking-tight sm:text-[13vw] md:text-[11vw] lg:text-[8.5vw] 2xl:text-[7vw]`;
             return name[i] === "i" ? (
               <div
                 key={`${nom}_${i}`}
-                className="flex flex-col items-center justify-center gap-y-[6vh] lg:gap-y-[10vh]"
+                className="flex flex-col items-center justify-center gap-y-1 sm:gap-y-[3vh] lg:gap-y-[5vh]"
               >
                 <motion.div
                   variants={starVariant}
@@ -66,7 +68,7 @@ function PreLoading({ count }: { readonly count: number }) {
                   animate="animate"
                   exit="exit"
                 >
-                  <StarSpin classNameSize="w-[15vw] sm:w-[12vw] lg:w-[7vw]" />
+                  <StarSpin classNameSize="w-[10vw] sm:w-[9vw] lg:w-[5.5vw]" />
                 </motion.div>
                 <motion.p
                   initial={{ y: "100%", opacity: 1 }}
@@ -86,7 +88,7 @@ function PreLoading({ count }: { readonly count: number }) {
                       ease: [0.65, 0, 0.35, 1]
                     },
                   }}
-                  className={`${spectralBridgeRegular.className} uppercase text-[29.5vw] leading-[.85] tracking-tight mb-[-.2em]`}
+                  className={letterClass}
                 >
                   {nom}
                 </motion.p>
@@ -111,13 +113,14 @@ function PreLoading({ count }: { readonly count: number }) {
                       ease: [0.65, 0, 0.35, 1]
                     },
                   }}
-                  className={`${spectralBridgeRegular.className} uppercase text-[29.5vw] leading-[.85] tracking-tight mb-[-.2em]`}
+                  className={letterClass}
                 >
                   {nom}
                 </motion.p>
               </div>
             );
           })}
+          </div>
         </motion.section>
       )}
     </AnimatePresence>

@@ -44,11 +44,7 @@ function MainButton({ text, fontSize, link, email, classNameWidth }: Button) {
       </div>
     </Link>
     :
-    <a
-      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email ?? "")}`}
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a href={`mailto:${email ?? ""}`}>
       <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

@@ -12,7 +12,7 @@ function Footer() {
   const links = [
     {
       title: "email",
-      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mradulgarg2005%40gmail.com",
+      href: "mailto:mradulgarg2005@gmail.com",
     },
     {
       title: "github",
@@ -92,7 +92,11 @@ function Footer() {
                 key={link.title}
                 className="relative w-fit text-[14px] md:text-[18px] capitalize after:duration-300 after:ease hover:after:w-full after:absolute after:w-0 after:h-[2px] after:top-full after:left-0 after:bg-lightText after:dark:bg-darkText"
               >
-                <a href={link.href} target="_blank">
+                <a
+                  href={link.href}
+                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                >
                   {link.title}
                 </a>
               </motion.li>

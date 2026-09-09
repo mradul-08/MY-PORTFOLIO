@@ -51,7 +51,7 @@ function Works() {
             </motion.div>
           </div>
         </div>
-        <div className="mt-8 md:mt-[-4vh]">
+        <div className="mt-8 min-w-0 space-y-10 md:mt-[-4vh] md:space-y-0">
           {allProjects?.map((work) => {
             return (
               <div key={work.title}>

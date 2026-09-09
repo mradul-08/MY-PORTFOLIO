@@ -29,7 +29,7 @@ function IndividualWork({ work }: Work) {
       onMouseMove={windowMouse}
       className={`${
         isHovered ? "cursor-none" : "cursor-default"
-      } relative aspect-[4/3] w-full object-cover overflow-hidden group`}
+      } relative isolate aspect-[4/3] w-full overflow-hidden object-cover group`}
     >
       <WorkHover x={x} y={y} isHovered={isHovered} />
       {work?.mainImage && (
@@ -51,14 +51,12 @@ function IndividualWork({ work }: Work) {
 
   return (
     <div
-      className={`flex justify-center ${
+      className={`flex min-w-0 justify-center ${
         work?.id === 1 ? "md:justify-start" : work?.position
-      } ${work.id === 0 || work.id === 3 ? "mb-14 md:mb-[10vw]" : "mb-16 md:mb-[15vw]"}`}
+      } ${work.id === 0 || work.id === 3 ? "mb-0 md:mb-[10vw]" : "mb-0 md:mb-[15vw]"}`}
     >
       <div
-        className={`w-full sm:max-w-[60vw] md:max-w-[30vw] 
-        
-        `}
+        className="w-full min-w-0 sm:max-w-[60vw] md:max-w-[30vw]"
       >
         {work.website ? (
           <a
