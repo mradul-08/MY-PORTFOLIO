@@ -9,7 +9,12 @@ type Props = {
 
 export function Provider({children} : Props) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+      storageKey="portfolio-theme"
+    >
       {children}
     </ThemeProvider>
   );
