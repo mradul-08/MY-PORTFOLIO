@@ -52,11 +52,11 @@ function PreLoading({ count }: { readonly count: number }) {
     <AnimatePresence>
       {count > 0 && (
         <motion.section
-          className="z-[100] relative flex h-[100svh] min-h-screen w-full items-center justify-center overflow-hidden bg-lightBg px-4 dark:bg-darkBg"
+          className="z-[100] relative flex h-[100svh] min-h-screen w-full items-end justify-center overflow-hidden bg-lightBg px-4 pb-[8vh] dark:bg-darkBg"
         >
-          <div className="flex w-full items-center justify-center whitespace-nowrap">
+          <div className="flex w-full max-w-[92vw] items-center justify-center whitespace-nowrap">
           {name.split("").map((nom, i) => {
-            const letterClass = `${spectralBridgeRegular.className} uppercase text-[15vw] leading-[.92] tracking-tight sm:text-[14vw] md:text-[13vw] lg:text-[12vw] xl:text-[11vw] 2xl:text-[10vw]`;
+            const letterClass = `${spectralBridgeRegular.className} uppercase text-[15vw] leading-[.92] tracking-tight sm:text-[14vw] md:text-[13vw] lg:text-[15vw] xl:text-[15vw] 2xl:text-[16vw]`;
             return name[i] === "i" ? (
               <div
                 key={`${nom}_${i}`}
