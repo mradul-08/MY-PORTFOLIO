@@ -12,7 +12,7 @@ function Works() {
   return (
     <section className="py-[10vh]" id="works">
       <div>
-        <div className="sticky top-[8vh]">
+        <div className="static md:sticky top-[8vh]">
           <div className="overflow-hidden">
             <motion.div
               // variants={headerVariant1}

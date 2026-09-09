@@ -71,12 +71,12 @@ function About() {
     <section className="py-[15vh]">
       <div>
         <div className="">
-          <Header3 phrase={topline1} className="pr-[15vw]"/>
-          <Header3 phrase={topline2} className="pr-[8vw]"/>
+          <Header3 phrase={topline1} className="pr-0 md:pr-[15vw]"/>
+          <Header3 phrase={topline2} className="pr-0 md:pr-[8vw]"/>
         </div>
         <div className="">
-        <Header3 phrase={bottomline1} className="pl-[8vw]"/>
-        <Header3 phrase={bottomline2} className="pl-[20vw]"/>
+        <Header3 phrase={bottomline1} className="pl-0 md:pl-[8vw]"/>
+        <Header3 phrase={bottomline2} className="pl-0 md:pl-[20vw]"/>
         </div>
       </div>
       <div className="mt-10 flex flex-col-reverse md:flex-row md:items-center gap-y-4 md:gap-y-0">
@@ -116,7 +116,7 @@ function About() {
         viewport={{ once: true }}
       >
         <div className="xs:flex-[1] hidden xs:block"></div>
-        <div className="xs:flex-[2.5] md:flex-[1.2] grid sm:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="xs:flex-[2.5] md:flex-[1.2] grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 items-start">
           <div className="flex flex-col gap-3 border-t border-lightText20 dark:border-darkText20 pt-4">
         <h3 className="font-bold text-[20px] md:text-[24px]">CodeVerse</h3>
       <Paragraph text="CodeVerse brings the entire interview journey under one roof — where algorithms meet aptitude, practice meets competition, and preparation meets real-time collaboration. It’s designed as a connected system rather than another collection of problem sheets, giving developers a place to practice, measure progress, compete, collaborate, and experience the pressure of real interviews." />

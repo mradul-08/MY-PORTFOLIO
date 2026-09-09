@@ -10,11 +10,11 @@ function ProcessParagraph() {
   return (
     <section className="my-[15vh]">
       <div className="w-[90%] mx-auto md:ml-auto md:mr-0">
-        <div className="flex items-start gap-[8vw]">
+        <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-[8vw]">
           <p className="text-[12.5px] sm:text-[16px]">My mission</p>
           <div>
-            <Header3 phrase={topline1} className="w-full !text-[clamp(2rem,5vw,5.5rem)]" />
-            <Header3 phrase={topline2} className="w-full !text-[clamp(2rem,5vw,5.5rem)]" />
+            <Header3 phrase={topline1} className="w-full !text-[clamp(1.8rem,5vw,5.5rem)]" />
+            <Header3 phrase={topline2} className="w-full !text-[clamp(1.8rem,5vw,5.5rem)]" />
           </div>
         </div>
         <div>

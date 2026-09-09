@@ -47,6 +47,8 @@ function Services() {
   const image = useRef(null);
 
   useGSAP(() => {
+    if (window.matchMedia("(max-width: 991px)").matches) return;
+
     gsap.to(image.current, {
       y: "25%",
       scrollTrigger: {
@@ -59,6 +61,8 @@ function Services() {
   });
 
   useGSAP(() => {
+    if (window.matchMedia("(max-width: 991px)").matches) return;
+
     gsap.from(topImage1.current, {
       y: "40%",
       ease: "power1.inOut",
@@ -282,12 +286,17 @@ function Services() {
             {allServices.map((item, i) => {
               return (
                 <motion.div key={item.title}>
-                  <ServicesList services={item} ref={serviceRef[i]} />
+                  <ServicesList
+                    services={item}
+                    ref={serviceRef[i]}
+                    mobileImage={serviceImages[i].image}
+                    mobileImageAlt={serviceImages[i].alt}
+                  />
                 </motion.div>
               );
             })}
           </div>
-          <div className="relative md:sticky top-0 flex-1 h-auto md:h-screen object-cover overflow-hidden">
+          <div className="relative hidden md:sticky md:block top-0 flex-1 h-screen object-cover overflow-hidden">
             <Image
               src={ServiceImage}
               alt="two spanish buildings with blue sky"

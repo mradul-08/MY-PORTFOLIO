@@ -68,7 +68,7 @@ function MoreDetail() {
           />
         </div>
         <div className="flex-[1.5]">
-          <div className="w-[72%] object-cover">
+          <div className="w-full md:w-[72%] object-cover">
             <h2 className="w-full text-center text-[16px] md:text-[20px] uppercase tracking-wide mb-3">
               My Tech Journey
             </h2>

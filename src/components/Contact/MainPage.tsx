@@ -147,13 +147,13 @@ function MainPage() {
   return (
     <div>
       <section className="my-[8vh]">
-        <div className="sm:w-[75%] md:w-[60%] mx-auto">
+        <div className="w-full sm:w-[75%] md:w-[60%] mx-auto">
           <div className="overflow-hidden">
             <motion.h1
               variants={rise}
               initial="initial"
               animate="animate"
-              className={`${spectralBridgeRegular.className} leading-[1] uppercase text-center text-[20vw] sm:text-[12vw]`}
+              className={`${spectralBridgeRegular.className} leading-[1] uppercase text-center text-[clamp(4.5rem,20vw,12rem)] sm:text-[12vw]`}
             >
               Let&apos;s <span className="italic lowercase">get</span>
             </motion.h1>
@@ -163,7 +163,7 @@ function MainPage() {
               variants={rise}
               initial="initial"
               animate="animate"
-              className={`${spectralBridgeRegular.className} leading-[1] uppercase text-center text-[20vw] sm:text-[12vw]`}
+              className={`${spectralBridgeRegular.className} leading-[1] uppercase text-center text-[clamp(4.5rem,20vw,12rem)] sm:text-[12vw]`}
             >
               <span className="italic lowercase">in</span> touch
             </motion.h1>
@@ -174,8 +174,8 @@ function MainPage() {
             </motion.div>
           </div>
           <div className="mt-14">
-            <form onSubmit={handleSubmit} className="">
-              <div className="flex flex-col xs:flex-row gap-6">
+            <form onSubmit={handleSubmit} className="w-full">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex-1 flex flex-col gap-y-2">
                   <motion.label
                     variants={appear}

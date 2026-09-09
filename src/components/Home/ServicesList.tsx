@@ -8,12 +8,16 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import StarSpin from "../StarSpin";
 import Banner from "../Banner";
+import Image from "next/image";
+import type { StaticImageData } from "next/image";
 
 type List = {
   services: Services;
+  mobileImage?: StaticImageData;
+  mobileImageAlt?: string;
 };
 
-const ServicesList = forwardRef<HTMLDivElement, List>(({ services }, ref) => {
+const ServicesList = forwardRef<HTMLDivElement, List>(({ services, mobileImage, mobileImageAlt }, ref) => {
   const image = useRef(null);
 
   useGSAP(() => {
@@ -65,6 +69,17 @@ const ServicesList = forwardRef<HTMLDivElement, List>(({ services }, ref) => {
               {services.description}
             </p>
           </div>
+          {mobileImage ? (
+            <div className="mt-8 overflow-hidden md:hidden">
+              <Image
+                src={mobileImage}
+                alt={mobileImageAlt ?? `${services.title} project image`}
+                className="h-auto w-full object-cover"
+                placeholder="blur"
+                sizes="(max-width: 991px) 100vw, 0px"
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

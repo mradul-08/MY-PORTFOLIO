@@ -140,7 +140,7 @@ function Hero() {
         variants={appear}
         initial="initial"
         animate="animate"
-        className="flex justify-center items-center md:justify-end gap-[5em] xs:gap-[8em] mt-5 md:pr-[6em]"
+        className="flex flex-wrap justify-center items-center md:justify-end gap-x-8 gap-y-1 sm:gap-x-[8em] mt-5 md:pr-[6em]"
       >
         <Header6 text="Software Developer" />
         <Header6 text="Full Stack Developer" />
@@ -163,7 +163,7 @@ function Hero() {
             variants={appear2}
             initial="initial"
             animate="animate"
-            className="translate-x-[10vw] xs:translate-x-0 md:pl-0 max-w-[40vw] md:flex-[1.5] object-cover relative isolate"
+            className="mx-auto w-[55vw] max-w-none xs:translate-x-0 md:mx-0 md:w-auto md:max-w-[40vw] md:pl-0 md:flex-[1.5] object-cover relative isolate"
           >
             <div aria-hidden="true" className="pointer-events-none absolute -left-3 -top-3 z-0 h-10 w-10 rounded-full bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.8),rgba(172,72,0,.28)_45%,rgba(172,72,0,.08)_72%)] shadow-[4px_6px_12px_rgba(87,31,0,.18)] dark:bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.35),rgba(245,231,211,.2)_45%,rgba(245,231,211,.04)_72%)] dark:shadow-[4px_6px_12px_rgba(0,0,0,.32)]" />
             <div aria-hidden="true" className="pointer-events-none absolute -right-3 -top-3 z-0 h-10 w-10 rounded-full bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.8),rgba(172,72,0,.28)_45%,rgba(172,72,0,.08)_72%)] shadow-[4px_6px_12px_rgba(87,31,0,.18)] dark:bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.35),rgba(245,231,211,.2)_45%,rgba(245,231,211,.04)_72%)] dark:shadow-[4px_6px_12px_rgba(0,0,0,.32)]" />
@@ -184,7 +184,7 @@ function Hero() {
             variants={appear3}
             initial="initial"
             animate="animate"
-            className="flex-[3] flex justify-end xs:items-end md:items-baseline xs:py-[4vh] md:py-0"
+            className="flex-[3] flex justify-end xs:items-end md:items-baseline py-4 md:py-0"
           >
             <div className="w-[80%] xs:w-full">
               <div className="w-[90%] sm:w-[80%] md:w-[60%]">

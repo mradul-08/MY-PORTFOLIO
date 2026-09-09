@@ -76,7 +76,7 @@ function Footer() {
         <StarSpin classNameSize="w-[16vw] sm:w-[12vw] lg:w-[8vw]" />
       </motion.div>
       <div className="flex flex-col-reverse md:flex-row md:justify-between gap-y-6">
-        <ul className="flex-1 flex flex-row justify-between md:justify-normal md:flex-col md:gap-y-1">
+        <ul className="flex flex-1 flex-row flex-wrap justify-start gap-x-5 gap-y-2 md:flex-col md:gap-y-1">
           {links.map((link, i) => {
             return (
               <motion.li
@@ -152,7 +152,7 @@ function Footer() {
           // initial="initial"
           // whileInView="animate"
           // viewport={{ once: true }}
-          className="flex items-center gap-10"
+          className="flex flex-wrap items-center gap-6 sm:gap-10"
         >
           <div>
             <p className="text-[14px] text-lightText60 dark:text-darkText60">

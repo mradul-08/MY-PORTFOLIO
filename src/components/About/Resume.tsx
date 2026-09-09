@@ -87,7 +87,7 @@ function Resume() {
                       key={list.institution}
                       className={`${
                         i !== item.list.length - 1 ? "mb-8" : "mb-0"
-                      } flex items-start justify-between gap-8`}
+                      } flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between`}
                     >
                       <div>
                         <p className="text-[16px] md:text-[18px]">
@@ -104,7 +104,7 @@ function Resume() {
                       </div>
                       <div className="shrink-0 text-right text-[13px] md:text-[16px]">
                         {(list.website || list.github) ? (
-                          <div className="mb-2 flex items-center justify-end gap-4 text-[13px] md:text-[15px]">
+                        <div className="mb-2 flex flex-wrap items-center justify-start gap-x-4 gap-y-2 text-left text-[13px] md:justify-end md:text-right md:text-[15px]">
                             {list.website ? (
                               <a
                                 href={list.website}
@@ -150,7 +150,7 @@ function Resume() {
           );
         })}
       </div>
-      <div className="mt-8 flex flex-col-reverse items-end gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-8 flex flex-col-reverse items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-5 text-lightText dark:text-darkText">
           {socialLinks.map((social) => (
             <a
