@@ -5,7 +5,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="px-[6vw]">
+    <div className="px-4 xs:px-5 sm:px-[6vw] md:px-[6vw]">
       <Navbar />
       <main>
         <MainPage />

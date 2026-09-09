@@ -6,9 +6,9 @@ function AboutMe() {
   const line2 = "Currently pursuing B.Tech in Computer Science at Ajay Kumar Garg Engineering College"
 
   return (
-    <section className="mt-[8vh] pt-[6vh] border-t-[1px] border-t-lightText20 dark:border-t-darkText20">
-      <div className="flex flex-col md:flex-row gap-x-[8vw] gap-y-6">
-        <p className={`text-[14px] md:text-[18px]`}>
+    <section className="mt-14 md:mt-[8vh] pt-6 md:pt-[6vh] border-t-[1px] border-t-lightText20 dark:border-t-darkText20">
+      <div className="flex flex-col md:flex-row gap-x-[8vw] gap-y-4 md:gap-y-6">
+        <p className={`text-[12px] uppercase tracking-[0.16em] md:text-[18px] md:normal-case md:tracking-normal`}>
           About me
         </p>
         <div className="flex-1">

@@ -29,15 +29,16 @@ function IndividualWork({ work }: Work) {
       onMouseMove={windowMouse}
       className={`${
         isHovered ? "cursor-none" : "cursor-default"
-      } relative w-full object-cover overflow-hidden group`}
+      } relative aspect-[4/3] w-full object-cover overflow-hidden group`}
     >
       <WorkHover x={x} y={y} isHovered={isHovered} />
       {work?.mainImage && (
         <Image
           src={work.mainImage}
           alt={`${work?.title} project`}
-          className="w-full group-hover:scale-105 duration-500"
+          className="h-full w-full object-cover duration-500 md:group-hover:scale-105"
           placeholder="blur"
+          sizes="(max-width: 991px) 100vw, 30vw"
         />
       )}
     </div>
@@ -52,7 +53,7 @@ function IndividualWork({ work }: Work) {
     <div
       className={`flex justify-center ${
         work?.id === 1 ? "md:justify-start" : work?.position
-      } ${work.id === 0 || work.id === 3 ? "mb-[10vw]" : "mb-[15vw]"}`}
+      } ${work.id === 0 || work.id === 3 ? "mb-14 md:mb-[10vw]" : "mb-16 md:mb-[15vw]"}`}
     >
       <div
         className={`w-full sm:max-w-[60vw] md:max-w-[30vw] 
@@ -73,9 +74,9 @@ function IndividualWork({ work }: Work) {
             {imagePreview}
           </Link>
         )}
-        <div className="flex flex-row-reverse justify-between items-start mt-1">
-          <p className="">{work?.year}</p>
-          <h5 className={`${spectralBridgeRegular.className} text-[36px]`}>
+        <div className="mt-3 flex flex-row-reverse justify-between items-start gap-3">
+          <p className="shrink-0 text-[13px]">{work?.year}</p>
+          <h5 className={`${spectralBridgeRegular.className} text-[clamp(1.8rem,8vw,2.25rem)] leading-none md:text-[36px]`}>
             {work?.title}
           </h5>
         </div>
@@ -114,7 +115,7 @@ function WorkHover({
       transition={{ duration: 0.5 }}
       className={`${
         isHovered ? "visible" : "invisible"
-      } z-[88] fixed top-0 left-0 pointer-events-none flex justify-center items-center w-[9em] h-[9em] rounded-full bg-lightText text-lightBg dark:bg-darkText dark:text-darkBg`}
+      } hidden md:flex z-[88] fixed top-0 left-0 pointer-events-none justify-center items-center w-[9em] h-[9em] rounded-full bg-lightText text-lightBg dark:bg-darkText dark:text-darkBg`}
     >
       <div className="overflow-hidden">
         <div className="flex flex-nowrap gap-8 animate-carousel">

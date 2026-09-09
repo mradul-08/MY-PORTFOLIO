@@ -71,7 +71,7 @@ function Footer() {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
-        className="flex justify-center mb-[4vh] md:mb-[8vh]"
+        className="flex justify-center mb-10 md:mb-[8vh]"
       >
         <StarSpin classNameSize="w-[16vw] sm:w-[12vw] lg:w-[8vw]" />
       </motion.div>
@@ -105,7 +105,7 @@ function Footer() {
               variants={rise}
               initial="initial"
               animate={line && "animate"}
-              className={`${spectralBridgeRegular.className} text-[8vw] md:text-[4vw] leading-[1]`}
+              className={`${spectralBridgeRegular.className} text-[clamp(2rem,8vw,4rem)] md:text-[4vw] leading-[1]`}
             >
               {line1}
             </motion.h5>
@@ -115,7 +115,7 @@ function Footer() {
               variants={rise}
               initial="initial"
               animate={line && "animate"}
-              className={`${spectralBridgeRegular.className} text-[8vw] md:text-[4vw] leading-[1]`}
+              className={`${spectralBridgeRegular.className} text-[clamp(2rem,8vw,4rem)] md:text-[4vw] leading-[1]`}
             >
               {line2}
             </motion.h5>
@@ -125,7 +125,7 @@ function Footer() {
               variants={rise}
               initial="initial"
               animate={line && "animate"}
-              className={`${spectralBridgeRegular.className} text-[8vw] md:text-[4vw] leading-[1]`}
+              className={`${spectralBridgeRegular.className} text-[clamp(2rem,8vw,4rem)] md:text-[4vw] leading-[1]`}
             >
               {line3}
             </motion.h5>
@@ -146,13 +146,13 @@ function Footer() {
           </motion.div>
         </div>
       </div>
-      <div className="flex justify-between flex-wrap mt-8 gap-y-3 gap-x-6">
+      <div className="flex flex-col gap-6 mt-10 sm:flex-row sm:justify-between sm:flex-wrap sm:gap-y-3 sm:gap-x-6">
         <motion.div
           // variants={appear}
           // initial="initial"
           // whileInView="animate"
           // viewport={{ once: true }}
-          className="flex flex-wrap items-center gap-6 sm:gap-10"
+          className="flex flex-wrap items-center gap-x-6 gap-y-4 sm:gap-10"
         >
           <div>
             <p className="text-[14px] text-lightText60 dark:text-darkText60">

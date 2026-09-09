@@ -113,7 +113,7 @@ function Hero() {
   };
 
   return (
-    <section className="py-[8vh]">
+    <section className="py-8 xs:py-10 md:py-[8vh]">
       <div className="flex flex-col items-center">
         <div className="w-fit overflow-hidden">
           <motion.div
@@ -140,30 +140,30 @@ function Hero() {
         variants={appear}
         initial="initial"
         animate="animate"
-        className="flex flex-wrap justify-center items-center md:justify-end gap-x-8 gap-y-1 sm:gap-x-[8em] mt-5 md:pr-[6em]"
+        className="flex flex-wrap justify-center items-center md:justify-end gap-x-5 sm:gap-x-[8em] gap-y-1 mt-5 md:pr-[6em]"
       >
         <Header6 text="Software Developer" />
         <Header6 text="Full Stack Developer" />
       </motion.div>
-      <div className="mt-6 flex flex-col-reverse md:flex-row gap-[8vw] items-start">
+      <div className="mt-8 flex flex-col-reverse md:flex-row gap-8 md:gap-[8vw] items-start">
         <motion.div
           variants={flash}
           initial="initial"
           animate="animate"
-          className="flex-1 flex justify-end origin-center"
+          className="flex-1 flex justify-center md:justify-end origin-center"
         >
           <div className="w-fit" ref={star}>
             <StarSpin
-              classNameSize="w-[30vw] xs:w-[20vw] sm:w-[15vw] md:w-[12vw]"
+            classNameSize="w-20 xs:w-24 sm:w-[15vw] md:w-[12vw]"
             />
           </div>
         </motion.div>
-        <div className="md:flex-[2.5] lg:flex-[1.5] flex flex-col xs:flex-row xs:mt-[4vh] md:mt-0 gap-8">
+        <div className="w-full md:flex-[2.5] lg:flex-[1.5] flex flex-col xs:flex-row xs:mt-[4vh] md:mt-0 gap-8">
           <motion.div
             variants={appear2}
             initial="initial"
             animate="animate"
-            className="mx-auto w-[55vw] max-w-none xs:translate-x-0 md:mx-0 md:w-auto md:max-w-[40vw] md:pl-0 md:flex-[1.5] object-cover relative isolate"
+            className="mx-auto w-[68vw] min-w-[11rem] max-w-[17rem] xs:translate-x-0 md:mx-0 md:w-auto md:max-w-[40vw] md:pl-0 md:flex-[1.5] object-cover relative isolate"
           >
             <div aria-hidden="true" className="pointer-events-none absolute -left-3 -top-3 z-0 h-10 w-10 rounded-full bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.8),rgba(172,72,0,.28)_45%,rgba(172,72,0,.08)_72%)] shadow-[4px_6px_12px_rgba(87,31,0,.18)] dark:bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.35),rgba(245,231,211,.2)_45%,rgba(245,231,211,.04)_72%)] dark:shadow-[4px_6px_12px_rgba(0,0,0,.32)]" />
             <div aria-hidden="true" className="pointer-events-none absolute -right-3 -top-3 z-0 h-10 w-10 rounded-full bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.8),rgba(172,72,0,.28)_45%,rgba(172,72,0,.08)_72%)] shadow-[4px_6px_12px_rgba(87,31,0,.18)] dark:bg-[radial-gradient(circle_at_32%_28%,rgba(255,255,255,.35),rgba(245,231,211,.2)_45%,rgba(245,231,211,.04)_72%)] dark:shadow-[4px_6px_12px_rgba(0,0,0,.32)]" />
@@ -184,17 +184,17 @@ function Hero() {
             variants={appear3}
             initial="initial"
             animate="animate"
-            className="flex-[3] flex justify-end xs:items-end md:items-baseline py-4 md:py-0"
+            className="flex-[3] flex justify-end xs:items-end md:items-baseline py-0 md:py-0"
           >
-            <div className="w-[80%] xs:w-full">
-              <div className="w-[90%] sm:w-[80%] md:w-[60%]">
+            <div className="w-full xs:w-full">
+              <div className="w-full sm:w-[80%] md:w-[60%]">
                 <Paragraph
                   text="I build scalable full-stack applications and intelligent web experiences, turning complex ideas into products that are fast, reliable, and built to solve real problems. Explore my work, technical journey, and projects below."
-                  className="text-[18px] sm:text-[20px] 2xl:text-[24px] leading-[1.45]"
+                  className="text-[17px] sm:text-[20px] 2xl:text-[24px] leading-[1.5]"
                 />
               </div>
               <div className="mt-3">
-                <MainButton text="Learn More" link="/about" fontSize="text-[17px] sm:text-[18px]" />
+                <MainButton text="Learn More" link="/about" fontSize="text-[17px] sm:text-[18px]" classNameWidth="w-full max-w-[15rem]" />
               </div>
             </div>
           </motion.div>

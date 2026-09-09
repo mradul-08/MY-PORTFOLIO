@@ -29,19 +29,22 @@ function Navbar() {
         variants={nav}
         initial="initial"
         animate="animate"
-        className="z-[99] duration-300 sticky top-0 bg-transparent mix-blend-multiply dark:mix-blend-difference"
+        className="z-[99] sticky top-0 bg-transparent py-2 sm:py-3 md:py-0 mix-blend-multiply dark:mix-blend-difference"
       >
         <div className="flex justify-between items-center">
           {/* Personal mark */}
           <Link href={"/"}>
-            <p className={`${rigata.className} text-[3em] 2xl:text-[5em] tracking-tighter`}>
+            <p className={`${rigata.className} text-[2.15rem] sm:text-[3em] 2xl:text-[5em] tracking-tighter leading-none`}>
               MG
             </p>
           </Link>
           {/* DARK MODE/LIGHT MODE TOGGLE */}
           <DarkLightSwitch />
           {/* MENU BUTTON */}
-          <button onClick={() => setMenuOpen(true)} className="2xl:text-[26px]">
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="min-h-11 px-1 text-[15px] 2xl:text-[26px] touch-manipulation"
+          >
             Menu
           </button>
         </div>

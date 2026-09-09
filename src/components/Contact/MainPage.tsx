@@ -146,14 +146,14 @@ function MainPage() {
 
   return (
     <div>
-      <section className="my-[8vh]">
+      <section className="my-12 md:my-[8vh]">
         <div className="w-full sm:w-[75%] md:w-[60%] mx-auto">
           <div className="overflow-hidden">
             <motion.h1
               variants={rise}
               initial="initial"
               animate="animate"
-              className={`${spectralBridgeRegular.className} leading-[1] uppercase text-center text-[clamp(4.5rem,20vw,12rem)] sm:text-[12vw]`}
+              className={`${spectralBridgeRegular.className} leading-[.95] uppercase text-center text-[clamp(3.6rem,17vw,12rem)] sm:text-[12vw]`}
             >
               Let&apos;s <span className="italic lowercase">get</span>
             </motion.h1>
@@ -163,17 +163,17 @@ function MainPage() {
               variants={rise}
               initial="initial"
               animate="animate"
-              className={`${spectralBridgeRegular.className} leading-[1] uppercase text-center text-[clamp(4.5rem,20vw,12rem)] sm:text-[12vw]`}
+              className={`${spectralBridgeRegular.className} leading-[.95] uppercase text-center text-[clamp(3.6rem,17vw,12rem)] sm:text-[12vw]`}
             >
               <span className="italic lowercase">in</span> touch
             </motion.h1>
           </div>
           <div className="flex justify-end">
-            <motion.div variants={appear} initial="initial" animate="animate" className="w-[70%] sm:w-[60%] md:w-[55%]">
+            <motion.div variants={appear} initial="initial" animate="animate" className="w-full sm:w-[60%] md:w-[55%]">
               <Paragraph text="Ready to bring your vision to life? Simply fill out the form, and let&apos;s start turning your ideas into reality. Or if you&apos;re reaching out to offer a new opportunity, feel free to message me—let&apos;s connect today!" />
             </motion.div>
           </div>
-          <div className="mt-14">
+          <div className="mt-10 md:mt-14">
             <form onSubmit={handleSubmit} className="w-full">
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex-1 flex flex-col gap-y-2">
@@ -190,7 +190,7 @@ function MainPage() {
                     variants={scale}
                     initial="initial"
                     animate="animate"
-                    className="py-2 px-2 origin-left border-b-[1.5px] border-b-lightText dark:border-b-darkText outline-none bg-transparent"
+                    className="min-h-11 py-2 px-2 origin-left border-b-[1.5px] border-b-lightText dark:border-b-darkText outline-none bg-transparent"
                     id="name"
                     name="user_name"
                     type="text"
@@ -214,7 +214,7 @@ function MainPage() {
                     variants={scale}
                     initial="initial"
                     animate="animate"
-                    className="py-2 px-2 origin-left border-b-[1.5px] border-b-lightText dark:border-b-darkText outline-none bg-transparent"
+                    className="min-h-11 py-2 px-2 origin-left border-b-[1.5px] border-b-lightText dark:border-b-darkText outline-none bg-transparent"
                     id="email"
                     name="user_email"
                     type="email"
@@ -240,7 +240,7 @@ function MainPage() {
                     variants={scale}
                     initial="initial"
                     animate="animate"
-                    className="py-2 px-2 origin-left border-b-[1.5px] border-b-lightText dark:border-b-darkText outline-none bg-transparent"
+                    className="min-h-11 py-2 px-2 origin-left border-b-[1.5px] border-b-lightText dark:border-b-darkText outline-none bg-transparent"
                     id="message"
                     name="user_message"
                     rows={3}
@@ -262,7 +262,7 @@ function MainPage() {
                   animate="animate"
                   type="submit"
                   disabled={loading}
-                  className="group hover:bg-lightText hover:text-lightBg dark:hover:bg-darkText dark:hover:text-darkBg duration-300 text-[16px] 2xl:text-[26px] w-full sm:w-[45%] py-2 border-[1px] border-lightText dark:border-darkText rounded-full outline-none"
+                  className="group min-h-12 touch-manipulation hover:bg-lightText hover:text-lightBg dark:hover:bg-darkText dark:hover:text-darkBg duration-300 text-[16px] 2xl:text-[26px] w-full sm:w-[45%] py-2 border-[1px] border-lightText dark:border-darkText rounded-full outline-none"
                 >
                   {loading ? <Loading classNameSize="w-7 h-7"/> : "Submit"}
                 </motion.button>

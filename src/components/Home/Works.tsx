@@ -10,9 +10,9 @@ function Works() {
   const header = useInView(headerRef, { once: true });
 
   return (
-    <section className="py-[10vh]" id="works">
+    <section className="py-16 md:py-[10vh]" id="works">
       <div>
-        <div className="static md:sticky top-[8vh]">
+        <div className="static md:sticky top-[8vh] space-y-1 md:space-y-0">
           <div className="overflow-hidden">
             <motion.div
               // variants={headerVariant1}
@@ -51,7 +51,7 @@ function Works() {
             </motion.div>
           </div>
         </div>
-        <div className="mt-[-4vh]">
+        <div className="mt-8 md:mt-[-4vh]">
           {allProjects?.map((work) => {
             return (
               <div key={work.title}>

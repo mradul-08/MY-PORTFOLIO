@@ -48,12 +48,12 @@ function MoreDetail() {
     },
   };
 
-  const bodyClass = "text-[13.5px] sm:text-[15px] 2xl:text-[24px]";
+  const bodyClass = "text-[15px] leading-[1.55] md:text-[13.5px] md:leading-normal 2xl:text-[24px]";
 
   return (
-    <section className="mt-[5vh]">
-      <div className="flex flex-col md:flex-row items-end gap-6 md:pl-[8vw]">
-        <div className="w-full flex-1 object-cover overflow-hidden">
+    <section className="mt-12 md:mt-[5vh]">
+      <div className="flex flex-col md:flex-row items-end gap-8 md:pl-[8vw]">
+        <div className="w-full flex-1 aspect-[2/3] md:aspect-auto object-cover overflow-hidden">
           <h2
             className="w-full text-center text-[16px] md:text-[20px] uppercase tracking-wide mb-3"
           >
@@ -62,7 +62,7 @@ function MoreDetail() {
           <Image
             src={AboutImage1}
             alt="AKGEC campus building under a blue sky"
-            className="w-full h-full scale-110"
+            className="w-full h-full object-cover scale-110"
             placeholder="blur"
             ref={image1}
           />
@@ -72,21 +72,21 @@ function MoreDetail() {
             <h2 className="w-full text-center text-[16px] md:text-[20px] uppercase tracking-wide mb-3">
               My Tech Journey
             </h2>
-            <div className="w-full overflow-hidden">
+            <div className="w-full aspect-[2/3] overflow-hidden">
               <Image
                 src={AboutImage2}
                 alt="Mradul presenting his CodeVerse project to a team"
-                className="w-full h-auto scale-100"
+                className="w-full h-full object-cover scale-100"
                 placeholder="blur"
                 ref={image2}
               />
             </div>
           </div>
-          <div className="mt-[4vh]">
-            <h2 className="tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase">
+          <div className="mt-8 md:mt-[4vh]">
+            <h2 className="tracking-tighter text-[clamp(2.4rem,10vw,7vw)] md:text-[7vw] leading-[.95] uppercase">
               Persistence
             </h2>
-            <h2 className="tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase">
+            <h2 className="tracking-tighter text-[clamp(2.4rem,10vw,7vw)] md:text-[7vw] leading-[.95] uppercase">
               &amp; Motivation
             </h2>
           </div>
@@ -97,7 +97,7 @@ function MoreDetail() {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
-        className="flex flex-col md:flex-row gap-x-[5vw] mt-8 md:mt-[8vh] pr-0 pl-[8vw] md:pr-[6vw] md:pl-0"
+        className="flex flex-col md:flex-row gap-x-[5vw] mt-10 md:mt-[8vh] pr-0 pl-0 md:pr-[6vw] md:pl-0"
       >
         <div className="flex-1 hidden md:block"></div>
         <div className="flex-1">

@@ -58,15 +58,15 @@ function Intro() {
 
   return (
     <section className="">
-      <div className="flex justify-center mt-[8vh]">
-        <div className="w-[85%] sm:w-[70%] lg:w-[65%] flex justify-center items-center flex-col">
+      <div className="flex justify-center mt-8 md:mt-[8vh]">
+        <div className="w-full sm:w-[70%] lg:w-[65%] flex justify-center items-center flex-col">
           <div className="z-[10] dark:mix-blend-exclusion">
             <div className="overflow-hidden">
               <motion.h1
                 variants={rise1}
                 initial="initial"
                 animate="animate"
-                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[6.5vw] text-center leading-[1]`}
+                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[clamp(2.35rem,10vw,5rem)] sm:text-[8vw] lg:text-[6.5vw] text-center leading-[1]`}
               >
                 {line1}
               </motion.h1>
@@ -76,18 +76,18 @@ function Intro() {
                 variants={rise1}
                 initial="initial"
                 animate="animate"
-                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[6.5vw] text-center leading-[1]`}
+                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[clamp(2.35rem,10vw,5rem)] sm:text-[8vw] lg:text-[6.5vw] text-center leading-[1]`}
               >
                 {line2}
               </motion.h1>
             </div>
           </div>
-          <div className="min-h-[30vh] lg:min-h-[65vh] w-full sm:w-[80%] lg:w-[60%] mt-[-3.3vh] md:mt-[-5vh] lg:mt-[-6vh]">
+          <div className="w-full sm:w-[80%] lg:w-[60%] mt-[-1rem] md:mt-[-5vh] lg:mt-[-6vh]">
             <motion.div
               variants={reveal}
               initial="initial"
               animate="animate"
-              className="overflow-hidden object-cover object-top z-[0] rounded-[32px]"
+                className="overflow-hidden object-cover object-top z-[0] rounded-[24px] md:rounded-[32px]"
             >
               <motion.div
                 className=""
@@ -95,7 +95,7 @@ function Intro() {
                 <Image
                   src={AboutMain}
                   alt="Mradul Garg working at a laptop"
-                  className="w-full rounded-[32px]"
+                  className="w-full rounded-[24px] md:rounded-[32px]"
                   placeholder="blur"
                   ref={imageRef}
                 />
@@ -107,7 +107,7 @@ function Intro() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="sm:w-[65%] lg:w-[50%] mt-8"
+            className="w-[92%] sm:w-[65%] lg:w-[50%] mt-7"
           >
             <Paragraph
               text="All Power is Within You; You Can Do Anything And Everything"

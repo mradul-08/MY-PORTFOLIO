@@ -223,13 +223,13 @@ function Services() {
   return (
     <section className="mb-[8vh] pt-[6vh]" id="skills">
       {/* SERVICE HEADER WITH SURROUNDING IMAGES */}
-      <div className="mb-[10vh]" ref={serviceDiv}>
-        <div className="flex justify-evenly items-end">
+      <div className="mb-10 md:mb-[10vh]" ref={serviceDiv}>
+        <div className="grid grid-cols-2 place-items-end gap-x-6 gap-y-4 md:flex md:justify-evenly md:items-end">
           {topImages.map((img) => {
             return (
               <div
                 key={img.alt}
-                className="w-[11vw] xs:w-[12vw] sm:w-[13vw] md:w-[10vw] object-cover object-center"
+                className="w-[17vw] min-w-[3.25rem] max-w-[7rem] xs:w-[12vw] sm:w-[13vw] md:w-[10vw] object-cover object-center"
                 ref={img.ref}
               >
                 {img.label && !img.labelBelow && (
@@ -247,15 +247,15 @@ function Services() {
             );
           })}
         </div>
-        <div className="flex justify-center mb-[5vh]">
+        <div className="flex justify-center mb-8 md:mb-[5vh]">
           <Header2 text="skills" />
         </div>
-        <div className="flex justify-between sm:justify-around items-start">
+        <div className="grid grid-cols-3 place-items-start gap-x-4 md:flex md:justify-between sm:justify-around items-start">
           {bottomImages.map((img) => {
             return (
               <div
                 key={img.alt}
-                className="w-[11vw] xs:w-[12vw] sm:w-[13vw] md:w-[10vw] object-cover object-center"
+                className="w-[17vw] min-w-[3.25rem] max-w-[7rem] xs:w-[12vw] sm:w-[13vw] md:w-[10vw] object-cover object-center"
                 ref={img.ref}
               >
                 {img.label && !img.labelBelow && (

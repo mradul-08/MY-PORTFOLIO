@@ -107,7 +107,7 @@ function MainPage() {
     <>
       <PreLoading count={count} />
       <div
-        className={`px-[6vw] transition-opacity duration-500 ${
+        className={`px-4 xs:px-5 sm:px-[6vw] md:px-[6vw] transition-opacity duration-500 ${
           count > 0 ? "pointer-events-none opacity-0" : "opacity-100"
         }`}
         aria-hidden={count > 0}

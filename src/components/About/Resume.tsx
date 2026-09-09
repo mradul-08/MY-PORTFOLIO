@@ -43,7 +43,7 @@ function Resume() {
   };
 
   return (
-    <section className="mt-[6vh]">
+    <section className="mt-12 md:mt-[6vh]">
       <div
         className="border-b-[1px] border-b-lightText20 dark:border-b-darkText20 md:border-none"
         ref={titleRef}
@@ -51,7 +51,7 @@ function Resume() {
         {items.map((item, l) => {
           return (
             <div
-              className="flex flex-col md:flex-row gap-5 border-t-[1px] border-t-lightText20 dark:border-t-darkText20 md:border-none"
+              className="flex flex-col md:flex-row gap-3 md:gap-5 border-t-[1px] border-t-lightText20 dark:border-t-darkText20 md:border-none"
               key={item.category}
             >
               <div className="flex-1 py-5">
@@ -69,7 +69,7 @@ function Resume() {
                 className={`flex-[3] md:border-t-[1px] md:border-t-lightText20 md:dark:border-t-darkText20 ${
                   l === items.length - 1 &&
                   "md:border-b-[1px] md:border-b-lightText20 md:dark:border-b-darkText20"
-                } md:px-3 py-5`}
+                  } px-0 py-4 md:px-3 md:py-5`}
               >
                 {item.list.map((list, i) => {
                   return (
@@ -102,7 +102,7 @@ function Resume() {
                           ) : null}
                         </div>
                       </div>
-                      <div className="shrink-0 text-right text-[13px] md:text-[16px]">
+                      <div className="w-full shrink-0 text-left text-[13px] md:w-auto md:text-right md:text-[16px]">
                         {(list.website || list.github) ? (
                         <div className="mb-2 flex flex-wrap items-center justify-start gap-x-4 gap-y-2 text-left text-[13px] md:justify-end md:text-right md:text-[15px]">
                             {list.website ? (
@@ -130,7 +130,7 @@ function Resume() {
                         {list.cgpa ? <p>CGPA: {list.cgpa}</p> : null}
                         {list.duration ? <p>{list.duration}</p> : null}
                         {list.cgpa ? (
-                          <div className="mt-3 flex justify-end">
+                            <div className="mt-3 flex justify-start md:justify-end">
                             <a
                               href="https://drive.google.com/file/d/1vZF4FCP8Hd4m3f4wlkKWbgqLZ7oqWpfB/view?usp=sharing"
                               target="_blank"
@@ -150,8 +150,8 @@ function Resume() {
           );
         })}
       </div>
-      <div className="mt-8 flex flex-col-reverse items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-5 text-lightText dark:text-darkText">
+      <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-4 text-lightText dark:text-darkText">
           {socialLinks.map((social) => (
             <a
               key={social.label}
@@ -166,12 +166,12 @@ function Resume() {
             </a>
           ))}
         </div>
-        <div className="flex h-[2.5em] overflow-hidden rounded-full border border-lightText text-lightText dark:border-darkText dark:text-darkText">
+        <div className="flex h-[2.75rem] w-full overflow-hidden rounded-full border border-lightText text-lightText dark:border-darkText dark:text-darkText sm:w-auto">
           <a
             href="https://drive.google.com/file/d/1Q71F6DRaAROseaHPC_N_QqDavQ-AZfq4/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
-            className="flex min-w-[9em] items-center justify-center px-4 text-[15px] transition-colors hover:bg-lightText hover:text-lightBg dark:hover:bg-darkText dark:hover:text-darkBg"
+            className="flex min-w-0 flex-1 items-center justify-center px-4 text-[15px] transition-colors hover:bg-lightText hover:text-lightBg dark:hover:bg-darkText dark:hover:text-darkBg sm:min-w-[9em] sm:flex-none"
           >
             View Resume
           </a>
@@ -181,7 +181,7 @@ function Resume() {
             rel="noreferrer"
             aria-label="Download resume"
             title="Download resume"
-            className="flex w-10 items-center justify-center border-l border-lightText transition-colors hover:bg-lightText hover:text-lightBg dark:border-darkText dark:hover:bg-darkText dark:hover:text-darkBg"
+            className="flex w-12 shrink-0 items-center justify-center border-l border-lightText transition-colors hover:bg-lightText hover:text-lightBg dark:border-darkText dark:hover:bg-darkText dark:hover:text-darkBg"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
               <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" strokeLinecap="round" strokeLinejoin="round" />
