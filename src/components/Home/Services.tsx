@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Top1 from "../../../public/images/services/top1.png";
 import Top2 from "../../../public/images/services/top2.png";
 import Bottom1 from "../../../public/images/services/bottom1.png";
@@ -36,13 +36,17 @@ function Services() {
   const serviceImage3 = useRef(null);
   const serviceImage4 = useRef(null);
 
-  const serviceRef = [serviceRef1, serviceRef2, serviceRef3, serviceRef4];
+  const serviceRef = useMemo(
+    () => [serviceRef1, serviceRef2, serviceRef3, serviceRef4],
+    []
+  );
   const serviceImage = [
     serviceImage1,
     serviceImage2,
     serviceImage3,
     serviceImage4,
   ];
+  const [activeService, setActiveService] = useState(0);
 
   const image = useRef(null);
 
@@ -114,43 +118,44 @@ function Services() {
       },
     });
 
-    const activateServiceImage = (index: number) => {
-      serviceImage.forEach((ref, currentIndex) => {
-        if (!ref.current) return;
-
-        gsap.set(ref.current, { zIndex: currentIndex === index ? 10 : 0 });
-        gsap.to(ref.current, {
-          autoAlpha: currentIndex === index ? 1 : 0,
-          duration: 0.35,
-          ease: "power2.out",
-          overwrite: "auto",
-        });
-      });
-    };
-
-    serviceImage.forEach((ref, i) => {
-      const trigger = serviceRef[i]?.current;
-      if (!ref.current || !trigger) return;
-
-      gsap.set(ref.current, {
-        autoAlpha: i === 0 ? 1 : 0,
-        zIndex: i === 0 ? 10 : 0,
-      });
-
-      gsap.to(ref.current, {
-        autoAlpha: i === 0 ? 1 : 0,
-        duration: 0.35,
-        scrollTrigger: {
-          trigger,
-          start: "top 60%",
-          end: "bottom 40%",
-          onEnter: () => activateServiceImage(i),
-          onEnterBack: () => activateServiceImage(i),
-          onLeaveBack: () => activateServiceImage(Math.max(0, i - 1)),
-        },
-      });
-    });
   });
+
+  useEffect(() => {
+    if (window.matchMedia("(max-width: 991px)").matches) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleServices = entries
+          .filter((entry) => entry.isIntersecting)
+          .map((entry) => {
+            const index = serviceRef.findIndex(
+              (ref) => ref.current === entry.target
+            );
+            const bounds = entry.boundingClientRect;
+
+            return {
+              index,
+              distanceFromCenter: Math.abs(
+                bounds.top + bounds.height / 2 - window.innerHeight / 2
+              ),
+            };
+          })
+          .filter(({ index }) => index >= 0)
+          .sort((a, b) => a.distanceFromCenter - b.distanceFromCenter);
+
+        if (visibleServices[0]) {
+          setActiveService(visibleServices[0].index);
+        }
+      },
+      { rootMargin: "-25% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] }
+    );
+
+    serviceRef.forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, [serviceRef]);
 
   const topImages = [
     {
@@ -310,16 +315,17 @@ function Services() {
                 return (
                   <motion.div
                     ref={serviceImage[i]}
-                    className={`${
-                      i === 0 ? "opacity-100" : "opacity-0"
-                    } absolute transform translate-x-[-50%] translate-y-[-50%] top-1/2 
-                    left-1/2 w-[40%] md:w-[50%] lg:w-[40%] 2xl:w-[50%] h-[20%] 2xl:h-[30%] object-cover`}
+                    className="absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-500 md:w-[50%] lg:w-[40%] 2xl:w-[50%]"
+                    style={{
+                      zIndex: activeService === i ? 10 : 0,
+                      opacity: activeService === i ? 1 : 0,
+                    }}
                     key={img.id}
                   >
                     <Image
                       src={img.image}
                       alt={img.alt}
-                      className="w-full h-full"
+                      className="h-auto w-full"
                       priority
                       loading="eager"
                       data-preload="true"
