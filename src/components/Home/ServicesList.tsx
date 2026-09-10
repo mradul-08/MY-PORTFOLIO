@@ -70,7 +70,10 @@ const ServicesList = forwardRef<HTMLDivElement, List>(({ services, mobileImage, 
             </p>
           </div>
           {mobileImage ? (
-            <div className="mt-8 aspect-[4/3] overflow-hidden rounded-2xl border border-lightText20 bg-lightText20 dark:border-darkText20 dark:bg-darkText20 md:hidden">
+            <div
+              ref={image}
+              className="mt-8 aspect-[4/3] overflow-hidden rounded-2xl border border-lightText20 bg-lightText20 dark:border-darkText20 dark:bg-darkText20 md:hidden"
+            >
               <Image
                 src={mobileImage}
                 alt={mobileImageAlt ?? `${services.title} project image`}
