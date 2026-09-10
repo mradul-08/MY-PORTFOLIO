@@ -35,7 +35,7 @@ const ServicesList = forwardRef<HTMLDivElement, List>(({ services, mobileImage, 
   return (
     <div
       ref={ref}
-      className={`px-0 py-10 md:px-3 md:py-8 ${
+      className={`px-0 py-16 md:px-3 md:py-8 ${
         services.id !== allServices.length &&
         "border-b-[1px] border-b-lightText20 dark:border-b-darkText20"
       } flex flex-col min-h-0 md:min-h-[65vh]`}
