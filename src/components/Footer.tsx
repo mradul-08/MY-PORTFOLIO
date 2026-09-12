@@ -145,7 +145,7 @@ function Footer() {
               text="Email Me"
               fontSize="text-[16px]"
               classNameWidth="w-full sm:w-[45%] lg:w-[12em]"
-              email="mradulgarg2005@gmail.com"
+              link="/contact"
             />
           </motion.div>
         </div>

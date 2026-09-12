@@ -1,11 +1,9 @@
 "use client";
-import React, { forwardRef, Fragment, useRef } from "react";
+import React, { forwardRef, Fragment } from "react";
 import { Services } from "@/types/type";
 import Paragraph from "../Paragraph";
 import { spectralBridgeRegular } from "@/fonts/font";
 import { allServices } from "@/utils/services";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import StarSpin from "../StarSpin";
 import Banner from "../Banner";
 import Image from "next/image";
@@ -15,23 +13,10 @@ type List = {
   services: Services;
   mobileImage?: StaticImageData;
   mobileImageAlt?: string;
+  preloadImage?: boolean;
 };
 
-const ServicesList = forwardRef<HTMLDivElement, List>(({ services, mobileImage, mobileImageAlt }, ref) => {
-  const image = useRef(null);
-
-  useGSAP(() => {
-    gsap.to(image.current, {
-      y: "25%",
-      scrollTrigger: {
-        trigger: image.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-  });
-
+const ServicesList = forwardRef<HTMLDivElement, List>(({ services, mobileImage, mobileImageAlt, preloadImage = false }, ref) => {
   return (
     <div
       ref={ref}
@@ -71,7 +56,6 @@ const ServicesList = forwardRef<HTMLDivElement, List>(({ services, mobileImage, 
           </div>
           {mobileImage ? (
             <div
-              ref={image}
               className="mt-8 aspect-[4/3] overflow-hidden rounded-2xl border border-lightText20 bg-lightText20 dark:border-darkText20 dark:bg-darkText20 md:hidden"
             >
               <Image
@@ -79,6 +63,8 @@ const ServicesList = forwardRef<HTMLDivElement, List>(({ services, mobileImage, 
                 alt={mobileImageAlt ?? `${services.title} project image`}
                 className="h-full w-full object-cover"
                 placeholder="blur"
+                priority={preloadImage}
+                quality={70}
                 sizes="(max-width: 991px) 100vw, 0px"
               />
             </div>

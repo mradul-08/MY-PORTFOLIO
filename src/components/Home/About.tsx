@@ -79,7 +79,7 @@ function About() {
         <Header3 phrase={bottomline2} className="pl-0 !text-[clamp(2rem,8vw,3.6rem)] md:pl-[20vw] md:!text-[clamp(2rem,3.6vw,3.6rem)]"/>
         </div>
       </div>
-      <div className="mt-10 flex flex-col-reverse md:flex-row md:items-center gap-y-4 md:gap-y-0">
+      <div className="mt-10 flex flex-col-reverse md:flex-row md:items-center gap-y-24 md:gap-y-0">
         <div className="aspect-[4/5] md:flex-1 md:aspect-[1206/1304] object-cover object-center overflow-hidden rounded-2xl md:rounded-none">
           <Image
             src={Image3}

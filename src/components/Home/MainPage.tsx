@@ -59,26 +59,6 @@ function MainPage() {
       window.setTimeout(() => {
         if (cancelled) return;
         setCount(0);
-
-        // Warm the remaining images after the first paint in small idle batches.
-        // They are cached before the user reaches them without blocking Lenis.
-        const remainingImages = Array.from(document.images).filter(
-          (image) => image.dataset.preload !== "true"
-        );
-        let index = 0;
-        const warmBatch = () => {
-          remainingImages.slice(index, index + 2).forEach((source) => {
-            const warm = new window.Image();
-            warm.decoding = "async";
-            warm.src = source.currentSrc || source.src;
-          });
-          index += 2;
-          if (index < remainingImages.length && !cancelled) {
-            const idle = window.requestIdleCallback ?? ((callback: () => void) => window.setTimeout(callback, 200));
-            idle(warmBatch);
-          }
-        };
-        warmBatch();
       }, remaining);
     };
 

@@ -246,6 +246,8 @@ function Services() {
                   src={img.image}
                   alt={img.alt}
                   placeholder="blur"
+                  quality={75}
+                  sizes="(max-width: 991px) 17vw, 10vw"
                   className="w-full h-full"
                 />
               </div>
@@ -272,6 +274,8 @@ function Services() {
                   src={img.image}
                   alt={img.alt}
                   placeholder="blur"
+                  quality={75}
+                  sizes="(max-width: 991px) 17vw, 10vw"
                   className="w-full h-full"
                 />
                 {img.label && img.labelBelow && (
@@ -296,6 +300,7 @@ function Services() {
                     ref={serviceRef[i]}
                     mobileImage={serviceImages[i].image}
                     mobileImageAlt={serviceImages[i].alt}
+                    preloadImage={i === 0}
                   />
                 </motion.div>
               );
@@ -307,7 +312,8 @@ function Services() {
               alt="two spanish buildings with blue sky"
               className="w-full h-full scale-150"
               placeholder="blur"
-              data-preload="true"
+              loading="lazy"
+              sizes="(min-width: 992px) 50vw, 0px"
               ref={image}
             />
             <div>
@@ -326,9 +332,9 @@ function Services() {
                       src={img.image}
                       alt={img.alt}
                       className="h-auto w-full"
-                      priority
-                      loading="eager"
-                      data-preload="true"
+                      priority={i === 0}
+                      quality={70}
+                      loading={i === 0 ? undefined : "lazy"}
                       sizes="(max-width: 768px) 40vw, (max-width: 1536px) 25vw, 30vw"
                     />
                   </motion.div>
